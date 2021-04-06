@@ -1,0 +1,74 @@
+.recommendation{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+div span.title{
+    background-color: red;
+    text-align: right;
+}
+.wrapper{
+    width: 75%;
+    margin: 150px auto
+}
+.matchGenre{
+    margin: 20px;
+    border: 1px solid #777373;
+    padding: 8px;
+    border-radius:25px
+}
+.container{
+    display: flex;
+    margin-bottom: 100px;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 120px;
+}
+.photoContainer{
+    width: 400px;
+    margin: 0 auto;
+}
+.overview{
+    margin:25px 0;
+}
+.genres{
+    display: flex;
+    flex-wrap: wrap;
+}
+.movie{
+    margin:25px;
+    width:200px
+}
+.movie{
+    margin:25px;
+    width:200px
+}
+.title{
+    margin-bottom: 40px;
+}
+@media screen and (max-width: 1025px ){
+    .container{
+        display: inline;
+    }
+    .description{
+        margin: 55px;
+    }
+}
+@media screen and (max-width: 450px ){
+    .photoContainer img{
+        width: 250px;
+    }
+    .photoContainer{
+        width: 250px;
+    }
+    .wrapper{
+        width: 100vw;
+        margin: 40px auto
+    }
+}
+

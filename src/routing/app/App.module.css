@@ -1,0 +1,22 @@
+.pagination {
+    margin: 0 auto 30px ;
+    display: flex;
+    list-style: none;
+    outline: none;
+
+}
+.pagination > li > a{
+    border: 1px solid #42494a;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.pagination > li > a, .pagination > li > span{
+    color: #282c2d
+}
+
+.title{
+    width: max-content;
+    margin: 25px auto 0;
+}

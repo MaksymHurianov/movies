@@ -1,0 +1,10 @@
+@media screen and (max-width: 1025px ){
+    .pagination{
+        display: none;
+    }
+}
+@media screen and (min-width: 1025px ){
+    .miniPagination{
+        display: none;
+    }
+}

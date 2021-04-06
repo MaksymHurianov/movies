@@ -1,0 +1,15 @@
+.favoriteMovies{
+    margin-top: 25px;
+}
+.emptyField{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 50vh;
+
+    margin: auto;
+}
+.emptyField p{
+    font-size: 75px;
+}
