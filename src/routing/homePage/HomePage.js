@@ -52,7 +52,6 @@ function HomePage({value, setValue, favoriteMovie, setFavoriteMovie, movies, set
             </div>
             <h2 className={s.title}>Popular movies</h2>
 
-
             <Movies movies={movies}
                     genres={genres}
                     favoriteMovie={favoriteMovie}
@@ -66,7 +65,6 @@ function HomePage({value, setValue, favoriteMovie, setFavoriteMovie, movies, set
                 pageCount={pageCount}
                 onPageChange={pageChange}
                 containerClassName={s.pagination}
-
             />
             </div>
             <div className={`issuesPagination ${s.pagination} ${style.miniPagination}`}  >
@@ -77,7 +75,6 @@ function HomePage({value, setValue, favoriteMovie, setFavoriteMovie, movies, set
                     pageCount={pageCount}
                     onPageChange={pageChange}
                     containerClassName={s.pagination}
-
                 />
             </div>
 

@@ -5,7 +5,6 @@ const url = 'https://api.themoviedb.org/3'
 const popularMovies = `${url}/movie/popular`
 const searchMovie = `${url}/search/movie`
 const genres = `${url}/genre/movie/list`
-// const movieDetails = `${url}/movie/${id}`
 const movieUrl = `${url}/movie`
 
 

@@ -5,6 +5,7 @@ import s from '../app/App.module.css'
 import Movies from "../../components/movies/Movies";
 import {FiSearch} from "react-icons/fi/index";
 import style from './searchPage.module.css'
+import Loading from "../../components/loading/Loading";
 
 
 
@@ -18,39 +19,42 @@ function Search({value,setValue,genres,setGenres, favoriteMovie, setFavoriteMovi
         window.scrollTo(0, 0)
     },[page])
 
-    useEffect(()=>{
-        getGenres().then((data)=>{
-            setGenres(data.data.genres)
-            setLoading(false)
-        })
+    useEffect(async ()=>{
+        let dataGenres = await getGenres()
+        setGenres(dataGenres.data.genres)
+        if (value !== '') {
+            let dataSearchMovies = await getSearchMovies(page, value)
+            setMovies(dataSearchMovies.data.results)
+        }
+        setLoading(false)
     },[])
-
 
     function pageChange(e){
         setPage( prev => e.selected+1)
-        getSearchMovies(e.selected+1, value).then(data=>{
-            setMovies(data.data.results)
-            setPageCount(data.data.total_pages)
+        if(value){
+            getSearchMovies(e.selected+1, value).then(data=>{
 
-        }).catch(()=>{
-
-        })
+                setMovies(data.data.results)
+                setPageCount(data.data.total_pages)
+            })
+        }
     }
     function submit(e){
-
         e.preventDefault()
-        getSearchMovies(page, value).then(data=>{
-                    setMovies(data.data.results)
-                    setPageCount(data.data.total_pages)
-        })
+        if(value){
+            getSearchMovies(page, value).then(data=>{
+                setMovies(data.data.results)
+                setPageCount(data.data.total_pages)
+            })
+        }
     }
 
     if(isLoading){
-        return <div>Loading...</div>
+        return <Loading/>
     }
+
     return (
         <>
-
             <div className={'form'}>
             <form onSubmit={submit}>
                 <input className={'search-form'} value={value} placeholder={"search movie"} onChange={(e)=>setValue(e.currentTarget.value)} />
@@ -71,7 +75,6 @@ function Search({value,setValue,genres,setGenres, favoriteMovie, setFavoriteMovi
                 pageCount={pageCount}
                 onPageChange={pageChange}
                 containerClassName={s.pagination}
-
             />
             </div>
         </>
