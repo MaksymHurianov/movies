@@ -40,7 +40,6 @@ function HomePage({value, setValue, favoriteMovie, setFavoriteMovie, movies, set
     if(isLoading){
         return <Loading/>
     }
-
     return (
         <div >
 
